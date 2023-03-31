@@ -1,0 +1,160 @@
+#gughg
+!hjhjhjkhkj
+<>
+-mkjlkjlkjl-
+
+#nodejs
+nodejs es javascritp pero del lado del servidor
+
+1)intalar nodejs, npm (node packahe manager) es un paquete 
+necesario para poder trabajas en nodejs
+
+2)como saber si tengo intalado nodejs
+1)abrir una terminal
+2)correr comando 
+#node -v o -version 
+3)siempre descargar la LTS
+
+#nvm
+significa node version manager y con este puedes trabajar 
+con las diferentes versiones de nodejs 
+
+#como intalar nvm en windows
+
+1-ir a https://github.com/coreybutler/nvm-windows/releases
+2-descargar el ejecutable .exe
+3-intalarlo y correr el siguiente comando para saber si esta 
+instalado 
+#nvm -v
+
+#intalar versiones de nodejs con nvm
+1-nvm install y version que necesitamos
+#nvm install 16
+2-usar la version que necesito
+#nvm use 16
+
+#iniciar projecto en nodejs
+#npm init -y 
+el package.json es el archivo que administra las dependencias 
+del projecto
+
+#dependencias para iniciar el projecto
+1-npm installl o npm i express
+
+#node_modules
+es la carpeta base donde se encuentran todas las dependencias
+
+#package-lock.json
+es el archivvo donde va guardando en cache las descargas de paquetes con el fin de agilizar una descarga posteriormente
+#eliminar node_modules
+cuando nos presente errores de iniciar la aplicacion, una vez eliminada borraremos el archivo package-lock.json, posterior a esto debemos correr el comando siguiente
+#npm i
+
+#ejecutar un archivo en nodejs
+para ejecutar un archivo en nodejs corremos el siguiente comando
+#node ruta_delarchivo
+#node src/index.js
+
+
+#inicializar node js
+1-configurar un puerto
+2-esto se va a realizar en un archivo de nuestra aplicacion 
+3-un puerto solo puede usar un cliente
+
+framework(marco de trabajo)
+#framework express
+Es un framework HTTP que maneja metodos Post , Get , Put, Delete
+
+#cuando queremos ver nuestro servidor vamos a ingresar con el nombre localhost:3000
+
+#nodemon
+es una dependencia que nos va a yudar a recargar el servicio de node sin tener que hacerlo manualmente
+
+para intalar nodemon no lo hacemos como dependencia si no como dev dependencia que son las dependencias de desarrollo
+
+npm i -D  nodemon
+ -D para intalar dependencias de desarrollo
+
+ #como inicializar mi aplicacion configurando el package.json
+ en el package.json configuramos un atributo en la key scripts donde agragamos el siguiente {key:valor} 
+ "scripts":{
+ 	"start":"node src/index.js"
+ }
+
+para correr este script es:
+# npm start
+
+cuando el nombre que esta dentro del script no es start lo debemos correr de la siguiente manera
+# npm run start
+
+configurar nodemon en los scripts agregar el key dev (puede ser cualquier nombre es este caso dev)
+# "dev":"nodemon --watch src src/index.js"
+
+"scripts": {
+    "start":"node src/index.js",
+    "dev":"nodemon --watch src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+#apiRest
+una apirest son servicios donde vamos a jugar con la informacion de la siguiente manera 
+
+-obtener informacion-
+para obtener informacion vamos a utilizar el metodo GET
+accediendo a una url con el metodo
+
+#localhost:3000/studenst 
+obtendria todos los estudiantes
+
+#localhost:3000/studenst/id
+obtendria solo el estudiante por el id que envie
+
+-guardar informacion-
+vamos a utilizar el metodo POST, en este caso vamos a utilizar una url, el metodo y el body con la informacion que vamos a guardar
+
+#localhost:3000/studenst
+POST
+-body-
+{
+	name:"sarah"
+}
+-actualizar informacion-
+vamos a utilizar el metodo PUT en este caso utilizaremos una url, el metodo y un body con la informacion actualizar
+
+#localhost:3000/studenst/id
+PUT
+-body-
+{
+	name:"alice"
+}
+-eliminar informacion-
+vamos a utilizar el metodo DELETE en este caso utilizaremos una url para eliminar un elemento
+
+#localhost:3000/studenst/id
+DELETE
+
+#DEFINICION DE VERBOS API EN express
+GET
+app.get("/studenst",(req,res)=>{
+	res.status(200).send("get all studenst")
+	})
+
+GET
+app.get("/studenst/:id",(req,res)=>{
+	res.status(200).send("get one studenst")
+	})
+
+	POST
+app.post("/studenst",(req,res)=>{
+	res.status(200).send("post studenst")
+	})
+
+PUT
+app.put("/studenst/:id",(req,res)=>{
+	res.status(200).send("update studenst")
+	})
+
+DELETE
+app.delete("/studenst/:id",(req,res)=>{
+	res.status(200).send("delete studenst")
+	})

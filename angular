@@ -1,0 +1,74 @@
+Componentes:
+un componente se compone de un archivo html , un archivo css 
+y un archivo ts , estos componente siempre se tienen que declarar 
+en el app.module.ts principal para que de esta manera angular lo tenga en cuenta.
+
+modulos:
+los modulos sirven para administrar los recursos que vayan utilizar,
+los componentes que este tenga
+
+imports
+En los imports siempre se tienen que declarar los modulos que se creen 
+
+declarations
+En los declarations siempre se tienen que declarar los componenetes
+
+providers 
+En los provaiders siempre se tienen que declarar los servicios que se vayan a solcitar
+
+
+src:
+Esta carpeta se compone de 3 subcarpetas las cuales son app , assets y 
+enviroments
+
+app:
+En esta carpeta se manejara todod lo relacionado con logica del software
+
+assets:
+En esta carpeta se manejara scss imagenes y fonts
+
+enviroments:
+En esta carpeta se manejara la configuracion de variables de entorno
+
+nota:
+Los componentes y servicios van a buscar el .module.ts mas cercano 
+
+Angular cli:
+
+para intalar angular cli correros el comando npm i @angular/cli
+
+una vez intalando esta libreria podemos correr comandos 
+como.
+
+ng server:
+Este comando levanta el servidor aunque angular ya lo configura para poner npm start
+
+crear un modulo:
+ng g mo components/component
+
+ng g mo components/component --flat
+
+este comando lo usamos cuando queremos cuando quiero crear solo el archivo sin que cree un folder
+
+ejemplo :
+ng g mo components/component
+va a crear components/component/componet.module.ts
+
+
+ng g m components/component --flat
+va a crear components/componet.module.ts
+
+
+
+
+crear componentes
+ng g c componets/card/card
+
+crear servicios:
+ng g s services/user
+
+nota:
+Cuando necesito que componentes vayan de un modulo a otro tengo que exportarlos
+
+spa-single page application
+Las aplicaciones spa son aquellas que no recargan el 100% de la pagina en cambio recarga solo los componenetes.

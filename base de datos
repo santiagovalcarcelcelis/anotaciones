@@ -1,0 +1,37 @@
+#que es sql
+sql es un lenguaje estandar para manipular base de datos relacionales
+
+sql:structure query language
+sql nos va a permitir tener informacion ordenada entre columnas y filas
+debemos garantizar que los campos de cada fila corresponda a la informacion que alli requerimos
+ejemplo:
+si tengo un campo llamado email debo garantizar que alli solo guarde datos con la estructura de un correo correctamente
+
+una tabla se representa como si fuera una hoja de calculo en ecxel
+#gestores de bases de datos 
+un gestor de base de datos , es una herramienta que nos va ayudar administrar nuestra informacion utilizando el lenguaje sql  
+
+gestores:
+mysql
+mariadb
+posgres
+sql server
+oracle
+#ejemplo de instrucciones sql
+crud: create read update delete 
+create:
+insert into usuarios (nombre,identificacion,telefono,sexo) values ("santiago",3138508721,121322323,"m")
+update:
+update usuarios set nombre = "andres"
+where id = 1
+delete:
+delete from usuarios where id = 1
+read:
+select * from usuarios
+select * from usuarios where sexo="m"
+
+#administrador de gestor de base de datos
+https://dbeaver.io/download/
+
+#xampp paquete que trae mysql
+https://www.apachefriends.org/es/download.html
